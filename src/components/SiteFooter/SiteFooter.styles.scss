@@ -1,0 +1,16 @@
+.site-footer {
+    height: 60px;
+    background-color: rgb(15, 15, 15);
+    color: rgb(167, 167, 167);
+
+    .container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        height: 100%;
+    }
+}
+
+.site-footer__brand {
+    font-size: 1rem;
+}

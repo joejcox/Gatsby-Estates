@@ -1,0 +1,14 @@
+@import "src/assets/styles/_variables.scss";
+
+.nav-links {
+    color: #333;
+
+    &:hover {
+        color: black;
+    }
+
+    &.active {
+        font-weight: 700;
+        color: $mainColour;
+    }
+}

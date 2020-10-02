@@ -1,0 +1,164 @@
+@import "src/assets/styles/_mixins.scss";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  font-size: 16px;
+}
+
+/* Defaults */
+
+body {
+  font-family: $mainFont;
+}
+
+a {
+  text-decoration: none;
+  color: $mainColour;
+
+  &:hover {
+    color: $mainColourDark;
+  }
+}
+
+.button {
+  background-color: $mainColour;
+  color: white;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem 1.5rem;
+
+  &:hover {
+    background-color: $mainColourDark;
+    color: white;
+  }
+
+  &:active {
+    background-color: $mainColourDarker;
+  }
+}
+
+h1,
+h2 {
+  letter-spacing: 1px;
+  font-family: $titleFont;
+}
+
+.has-text-white {
+  color: white;
+}
+
+.has-text-black {
+  color: black;
+}
+
+.has-text-dark {
+  color: #333;
+}
+
+/* Defaults: Containers */
+
+.wrapper {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.wrapper__top {
+  flex: 1;
+}
+
+.wrapper_bottom {
+  background: #f7f7f7;
+}
+
+.container {
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 1rem;
+  max-width: 100%;
+
+  @include desktop {
+    width: 1400px;
+  }
+}
+
+/* Defaults: Page/Banner/Section Titles */
+
+.page-title {
+  padding: 2rem 0;
+  font-size: 2rem;
+
+  +.sub-title {
+    font-weight: 400;
+    font-size: 1rem;
+    margin-top: -1.5rem;
+  }
+
+  +.button {
+    margin-top: -0.5rem;
+  }
+}
+
+.sub-title {
+  font-family: $mainFont;
+  font-size: 1.25rem;
+}
+
+.section {
+  padding: 3rem 0;
+}
+
+.section__title {
+  padding: 1rem 0;
+  color: rgb(90, 89, 89);
+}
+
+.section__sub-title {
+  font-size: 1rem;
+  font-weight: 400;
+  margin-top: -0.75rem;
+}
+
+
+.section__latest_properties {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  margin-left: -.5rem;
+  margin-right: -.5rem;
+
+  @include mobile {
+    margin: 0;
+  }
+
+  @include tablet {
+    margin: 0;
+  }
+}
+
+.property-slide {
+  position: relative;
+  height: 250px;
+  width: 25%;
+  padding: .5rem;
+
+  @include mobile {
+    width: 100%;
+  }
+
+  @include tablet {
+    width: 50%;
+  }
+
+  .image {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+  }
+}

@@ -1,0 +1,19 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Serif+Text&family=Open+Sans:wght@400;700&display=swap");
+
+$mainFont: "Open Sans",
+sans-serif;
+$titleFont: "DM Serif Text",
+serif;
+
+$mainColour: rgb(110, 57, 233);
+$mainColour20: rgba(110, 57, 233, 0.2);
+$mainColour30: rgba(110, 57, 233, 0.3);
+$mainColour40: rgba(110, 57, 233, 0.4);
+$mainColour50: rgba(110, 57, 233, 0.5);
+$mainColour60: rgba(110, 57, 233, 0.6);
+$mainColour70: rgba(110, 57, 233, 0.7);
+$mainColour80: rgba(110, 57, 233, 0.8);
+$mainColour90: rgba(110, 57, 233, 0.9);
+$mainColourLight: lighten($mainColour, 10%);
+$mainColourDark: darken($mainColour, 10%);
+$mainColourDarker: darken($mainColour, 20%);
