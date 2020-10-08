@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react"
-import AniLink from "gatsby-plugin-transition-link/AniLink"
-// import { Link } from "gatsby"
+import { graphql, useStaticQuery } from "gatsby"
+import { Link } from "gatsby"
 
 import "../../node_modules/slick-carousel/slick/slick.scss"
 import "../../node_modules/slick-carousel/slick/slick-theme.scss"
@@ -12,6 +12,18 @@ import { FaSearch } from "react-icons/fa"
 import bannerImage from "images/banner6.jpg"
 
 const Home = () => {
+  const data = useStaticQuery(graphql`
+    query {
+      site {
+        siteMetadata {
+          title
+          seo
+        }
+      }
+    }
+  `)
+
+  const { title, seo } = data.site.siteMetadata
   const [properties, setProperties] = useState([])
 
   useEffect(() => {
@@ -28,7 +40,8 @@ const Home = () => {
 
   return (
     <Layout
-      docTitle="Gatsby Estates"
+      docTitle={title}
+      seo={seo}
       pageDesc="This is the home page, please click if you like buying properties!"
     >
       <Banner
@@ -39,9 +52,9 @@ const Home = () => {
         hasOverlay
       >
         <h1 className="page-title">Find properties in your area now!</h1>
-        <AniLink cover to="/properties" className="button">
+        <Link to="/properties" className="button">
           <FaSearch /> &nbsp; Search Properties
-        </AniLink>
+        </Link>
       </Banner>
       <section className="section">
         <div className="container">

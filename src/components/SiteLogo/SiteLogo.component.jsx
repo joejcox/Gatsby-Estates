@@ -1,13 +1,11 @@
 import React from "react"
-import AniLink from "gatsby-plugin-transition-link/AniLink"
+import { Link } from "gatsby"
 
-const SiteLogo = () => {
+const SiteLogo = ({ title }) => {
   return (
     <section className="site-header__logo">
       <h2>
-        <AniLink cover to="/">
-          Gatsby Estates
-        </AniLink>
+        <Link to="/">{title}</Link>
       </h2>
     </section>
   )

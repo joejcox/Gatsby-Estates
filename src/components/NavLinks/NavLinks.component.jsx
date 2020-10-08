@@ -1,22 +1,25 @@
 import React from "react"
-import AniLink from "gatsby-plugin-transition-link/AniLink"
+import { Link } from "gatsby"
 import "./NavLinks.styles.scss"
 
 const NavLinks = () => {
   return (
     <>
-      <AniLink cover className="nav-link" to="/" activeClassName="active">
+      <Link className="nav-link" to="/" activeClassName="active">
         Home
-      </AniLink>
-      <AniLink cover className="nav-link" to="/about">
+      </Link>
+      <Link className="nav-link" to="/about/" activeClassName="active">
         About
-      </AniLink>
-      <AniLink cover className="nav-link" to="/properties">
+      </Link>
+      <Link className="nav-link" to="/blog/" activeClassName="active">
+        Blog
+      </Link>
+      <Link to="/properties/" activeClassName="active" className="nav-link">
         Properties
-      </AniLink>
-      <AniLink cover className="nav-link" to="/contact">
+      </Link>
+      <Link className="nav-link" to="/contact/" activeClassName="active">
         Contact
-      </AniLink>
+      </Link>
     </>
   )
 }

@@ -1,0 +1,22 @@
+.blog {
+  background: #000000;
+  .container {
+    display: flex;
+    flex-wrap: wrap;
+  }
+}
+
+.blog__post_preview {
+  width: 33.333%;
+}
+
+.blog__post_date {
+  margin-bottom: 1rem;
+}
+
+.blog__post_preview_inner {
+  padding: 1rem;
+  margin: 0.25rem;
+  height: 100%;
+  background: white;
+}

@@ -6,7 +6,7 @@
   "license": "0BSD",
   "scripts": {
     "build": "GATSBY_ENV=production gatsby build",
-    "develop": "GATSBY_ENV=development gatsby develop",
+    "develop": "env-cmd -f ./.env.development gatsby develop",
     "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\"",
     "start": "npm run develop",
     "serve": "gatsby serve",
@@ -22,6 +22,8 @@
     "gatsby-plugin-sass": "^2.3.14",
     "gatsby-plugin-transition-link": "^1.20.2",
     "gatsby-source-contentful": "^2.3.49",
+    "gatsby-source-filesystem": "^2.3.33",
+    "gatsby-transformer-remark": "^2.8.38",
     "gsap": "^3.5.1",
     "node-sass": "^4.14.1",
     "react": "^16.12.0",
@@ -32,6 +34,7 @@
     "slick-carousel": "^1.8.1"
   },
   "devDependencies": {
+    "env-cmd": "^10.1.0",
     "prettier": "2.1.2"
   },
   "repository": {

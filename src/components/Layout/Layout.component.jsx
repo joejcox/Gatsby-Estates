@@ -4,11 +4,11 @@ import SiteHeader from "components/SiteHeader/SiteHeader.component"
 import SiteFooter from "components/SiteFooter/SiteFooter.component"
 import "./Layout.styles.scss"
 
-const Layout = ({ docTitle, pageDesc, children }) => {
+const Layout = ({ docTitle, seo, pageDesc, children }) => {
   return (
     <>
       <Helmet>
-        <title>{docTitle}</title>
+        <title>{seo ? `${docTitle} | ${seo}` : docTitle}</title>
         <meta name="description" content={pageDesc} />
       </Helmet>
       <div className="wrapper">

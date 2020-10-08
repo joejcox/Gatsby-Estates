@@ -11,10 +11,23 @@ require("dotenv").config({
 })
 
 module.exports = {
+  siteMetadata: {
+    title: "Gatsby Estates",
+    seo: "Properties to rent in Cardiff | South Wales estate agents",
+    author: "Joe Cox",
+  },
   plugins: [
     "gatsby-plugin-sass",
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-transition-link`,
+    "gatsby-transformer-remark",
+    {
+      resolve: "gatsby-source-filesystem",
+      options: {
+        name: "src",
+        path: `${__dirname}/src/`,
+      },
+    },
     {
       resolve: "gatsby-plugin-root-import",
       options: {
