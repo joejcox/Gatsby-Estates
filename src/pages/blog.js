@@ -20,6 +20,9 @@ const Blog = () => {
               blogTitle
               date
             }
+            fields {
+              slug
+            }
             excerpt(pruneLength: 50)
           }
         }
@@ -42,14 +45,17 @@ const Blog = () => {
         <div className="container">
           {data.allMarkdownRemark.edges.map(edge => {
             const { blogTitle, date } = edge.node.frontmatter
+            const { slug } = edge.node.fields
             return (
-              <article className="blog__post_preview">
+              <article key={blogTitle} className="blog__post_preview">
                 <div className="blog__post_preview_inner">
-                  <h2 className="blog__post_title">{blogTitle}</h2>
+                  <h2 className="blog__post_title">
+                    <a href={`/blog/${slug}`}>{blogTitle}</a>
+                  </h2>
                   <p className="blog__post_date">{date}</p>
                   <p>
                     {edge.node.excerpt}
-                    <a href="#"> read more</a>
+                    <a href={`/blog/${slug}`}> read more</a>
                   </p>
                 </div>
               </article>
