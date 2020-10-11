@@ -2,6 +2,7 @@ import React from "react"
 import { graphql } from "gatsby"
 import Layout from "components/Layout/Layout.component"
 import Banner from "components/Banner/Banner.component"
+import "./post.styles.scss"
 
 export const query = graphql`
   query($slug: String!) {
@@ -16,23 +17,27 @@ export const query = graphql`
 `
 
 const Post = props => {
+  const {
+    html,
+    frontmatter: { blogTitle, date },
+  } = props.data.markdownRemark
   return (
     <Layout
-      docTitle={`${props.data.markdownRemark.frontmatter.blogTitle} | Gatsby Estates`}
+      docTitle={`${blogTitle} | Gatsby Estates`}
       pageDesc="Gatsby Estates are one of the most popular estate agents in Cardiff. Check out the available properties now!"
     >
-      <Banner size="is-small">
-        <h1 className="page-title">
-          {props.data.markdownRemark.frontmatter.blogTitle}
-        </h1>
-        <p>{props.data.markdownRemark.frontmatter.date}</p>
-      </Banner>
-      <section className="section">
-        <div
-          className="container"
-          dangerouslySetInnerHTML={{ __html: props.data.markdownRemark.html }}
-        ></div>
-      </section>
+      <div className="blog-post">
+        <Banner size="is-small">
+          <h1 className="page-title">{blogTitle}</h1>
+          <p>{date}</p>
+        </Banner>
+        <section className="section">
+          <div
+            className="container"
+            dangerouslySetInnerHTML={{ __html: html }}
+          ></div>
+        </section>
+      </div>
     </Layout>
   )
 }

@@ -31,7 +31,6 @@ const Blog = () => {
   `)
 
   const { title, seo } = data.site.siteMetadata
-  // const { blogTitle, date } = data.allMarkdownRemark.edges.node.frontmatter
   return (
     <Layout
       docTitle={`Blog - ${title}`}
@@ -47,6 +46,7 @@ const Blog = () => {
             const { blogTitle, date } = edge.node.frontmatter
             const { slug } = edge.node.fields
             return (
+              // make this in to a component
               <article key={blogTitle} className="blog__post_preview">
                 <div className="blog__post_preview_inner">
                   <h2 className="blog__post_title">
